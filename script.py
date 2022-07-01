@@ -7,7 +7,7 @@ def main():
     os.system("yum install -y wget")
     os.system("wget --no-check-certificate https://dlcdn.apache.org/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz && tar xvf zeppelin-*-bin-all.tgz -C /opt")
     os.makedirs("/opt/zeppelin")
-    os.system("mv /opt/zeppelin-*-bin-all/* /opt/zeppelin"
+    os.system("mv /opt/zeppelin-*-bin-all/* /opt/zeppelin")
     os.system("adduser -d /opt/zeppelin -s /sbin/nologin zeppelin")
     os.system("chown -R zeppelin:zeppelin /opt/zeppelin")
     os.chdir("/etc/systemd/system")
@@ -27,8 +27,8 @@ Restart=always\n\
 [Install]\n
 WantedBy=multi-user.target" >> zeppelin.service''')
     os.system("systemctl start zeppelin && systemctl enable zeppelin")
-    os.system("yum install -y epel-release")
-    os.system("yum install -y nginx && systemctl start nginx && systemctl enable nginx")
-
+    os.system('echo "export ZEPPELIN_ADDR=127.0.0.1" >> /opt/zeppelin/conf/zeppelin-env.sh.template')
+    os.system('echo "export ZEPPELIN_PORT=8888" >> /opt/zeppelin/conf/zeppelin-env.sh.template')
+    os.system('systemctl restart zeppelin.service')
 main()
     
