@@ -1,5 +1,3 @@
----
-
 ### Step 1
 
 ```bash
@@ -8,6 +6,7 @@ vagrant plugin install vagrant-disksize
 ```
 
 ---
+
 ### Step 2
 
 #### Obs:
@@ -35,9 +34,9 @@ sudo python3 script.py
 
 ---
 ### Documentos Uteis
+- [How to Install Apache Zeppelin on CentOS 7](https://www.vultr.com/docs/how-to-install-apache-zeppelin-on-centos-7/)
 
-[How to Install Apache Zeppelin on CentOS 7](https://www.vultr.com/docs/how-to-install-apache-zeppelin-on-centos-7/)
-[Apache Zeppelin Configuration](https://zeppelin.apache.org/docs/0.8.0/setup/operation/configuration.html)
+- [Apache Zeppelin Configuration](https://zeppelin.apache.org/docs/0.8.0/setup/operation/configuration.html)
 
 ---
 
